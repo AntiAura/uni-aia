@@ -3,8 +3,6 @@ import os
 import tqdm
 import pickle
 
-from deepface import DeepFace
-
 """ # Load dataset
 DATA_PATH = "data"
 files = []
@@ -30,6 +28,14 @@ for file in tqdm.tqdm(files[:5000]):
 with open("results.pkl", "wb") as f:
     pickle.dump(results, f) """
 
-# Load results
-with open("results.pkl", "rb") as f:
-    results = pickle.load(f)
+
+def get_results():
+    # Load results
+    with open("results.pkl", "rb") as f:
+        results = pickle.load(f)
+
+    return results
+
+
+if __name__ == "__main__":
+    get_results()
